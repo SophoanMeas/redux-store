@@ -1,0 +1,31 @@
+{
+  "name": "redux-store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "heroku-postbuild": "cd client && npm run build"
+  },
+  
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophoanMeas/redux-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SophoanMeas/redux-store/issues"
+  },
+  "homepage": "https://github.com/SophoanMeas/redux-store#readme",
+  "description": ""
+}
