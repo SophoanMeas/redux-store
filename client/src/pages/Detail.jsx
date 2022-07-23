@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Cart from '../components/Cart';
-import { useStoreContext } from '../utils/GlobalState';
+
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
 } from '../utils/actions';
+
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
@@ -85,11 +85,8 @@ export default function Detail() {
       {currentProduct && cart ? (
         <div className='container my-1'>
           <Link to='/'>← Back to Products</Link>
-
           <h2>{currentProduct.name}</h2>
-
           <p>{currentProduct.description}</p>
-
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -100,7 +97,6 @@ export default function Detail() {
               Remove from Cart
             </button>
           </p>
-
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
