@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
 
+const { Schema } = mongoose;
+
 const userSchema = new mongoose.Schema(
   {
     firstName: {
@@ -28,7 +30,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 5,
     },
-    orders: [Order.Schema],
+    orders: [Order.schema]
   },
   {
     toJSON: {
